@@ -5,6 +5,8 @@ package root;
 
 import java.util.ArrayList;
 
+//import static spark.Spark.get;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -12,6 +14,16 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        /*
+        get("/compute",
+            (rq,rs) -> {
+                Map<String, String> map = new HashMap<String, String>();
+                map.put("result","not computed yet!");
+                return new ModelAndView(map, "compute.mustache");
+                },
+                new MustacheTemplateEngine()
+        );*/
+
     }
 
     public static boolean search(ArrayList <Integer> arr, int e){
