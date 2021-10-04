@@ -27,7 +27,7 @@ public class App {
         System.out.println(new App().getGreeting());
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "Welcome to my Bil481 Project. /nPlease go to /compute.");
+        get("/", (req, res) -> "Welcome to my Bil481 Project. \nPlease go to /compute.");
 
         get("/compute",
             (rq, rs) -> {
