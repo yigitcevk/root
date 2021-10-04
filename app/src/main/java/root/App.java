@@ -18,7 +18,7 @@ import spark.template.mustache.MustacheTemplateEngine;
 
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "Hello World! That's Bil481 project";
     }
 
     public static void main(String[] args) {
@@ -27,7 +27,7 @@ public class App {
         System.out.println(new App().getGreeting());
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "YEEEEAHHHH");
+        get("/", (req, res) -> "Welcome to my Bil481 Project. /nPlease go to /compute.");
 
         get("/compute",
             (rq, rs) -> {
@@ -57,8 +57,12 @@ public class App {
 
             String input2 = req.queryParams("input2").replaceAll("\\s","");
             int input2AsInt = Integer.parseInt(input2);
+            String input3 = req.queryParams("input2").replaceAll("\\s","");
+            int input3AsInt = Integer.parseInt(input2);
+            String input4 = req.queryParams("input2").replaceAll("\\s","");
+            int input4AsInt = Integer.parseInt(input2);
 
-            boolean result = App.search(inputList, input2AsInt);
+            boolean result = App.search(inputList, input2AsInt,input3AsInt,input4AsInt);
 
             Map<String, Boolean> map = new HashMap<String, Boolean>();
             map.put("result", result);
@@ -69,14 +73,20 @@ public class App {
 
     }
 
-    public static boolean search(ArrayList <Integer> arr, int e){
+    public static boolean search(ArrayList <Integer> labs, int midterm, int fin, int proje){
         System.out.println("inside search");
 
-        if(arr == null)return false;
+        if(labs == null)return false;
 
-        for(int element : arr){
-            if(element == e)return true;
+        double sum=0;
+        for(int element : labs){
+            sum+=element;
         }
+        double scoreFromLabs = sum/labs.size();
+
+        double grade=scoreFromLabs + (midterm*3.0/10) + (fin*5.0/10) + (proje*2.0/10);
+
+        if(grade >= 50)return true;
         return false;
     }
 

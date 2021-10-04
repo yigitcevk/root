@@ -1,10 +1,17 @@
 <title>My application deployed automatically</title>
-<h1>Hello, World!</h1>
-Result is {{result}}
+<h1>DID YOU PASS?</h1>
+  <br>
+  <h3>Firstly, enter your lab scores. Secondly, enter your midterm score</h3>
+  <br>
+  <h3>Thirdly, enter your final score. Finally enter your project score.</h3>
+  <br>
+Did you pass the class?  {{result}}
 
 <form action="compute" method="post">
-    <textarea name="input1" rows="10" cols="30"></textarea>
+    <textarea name="input1" rows="50" cols="30"></textarea>
     <textarea name="input2" rows="10" cols="30"></textarea>
+    <textarea name="input3" rows="10" cols="30"></textarea>
+    <textarea name="input4" rows="10" cols="30"></textarea>
     <br>
     <input type="submit">
 </form>

@@ -16,22 +16,22 @@ class AppTest {
     }
 
     @Test
-    public void testFound(){
-        ArrayList <Integer> arr = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
-        assertTrue(App.search(arr, 4));
+    public void classPassed(){
+        ArrayList <Integer> arr = new ArrayList<Integer>(Arrays.asList(10,10,5,5,10));
+        assertTrue(App.search(arr, 100,100,100));
     }
     @Test
-    public void testNotFound(){
-        ArrayList <Integer> arr = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
-        assertFalse(App.search(arr, 5));
+    public void classNotPassed(){
+        ArrayList <Integer> arr = new ArrayList<Integer>(Arrays.asList(0,5,10,5,5));
+        assertFalse(App.search(arr, 10,20,15));
     }
     @Test
     public void testEmptyArray(){
         ArrayList <Integer> arr = new ArrayList<Integer>();
-        assertFalse(App.search(arr, 1));
+        assertFalse(App.search(arr, 60,60,60));
     }
     @Test
     public void nullArray(){
-        assertFalse(App.search(null, 1));
+        assertFalse(App.search(null, 60,60,60));
     }
 }
