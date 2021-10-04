@@ -25,7 +25,7 @@ public class App {
         //Logger logger = LogManager.getLogManager(App.class);
         //logger.error("xxERRORxx");
         System.out.println(new App().getGreeting());
-        //port(getHerokuAssignedPort());
+        port(getHerokuAssignedPort());
 
         get("/", (req, res) -> "YEEEEAHHHH");
 
